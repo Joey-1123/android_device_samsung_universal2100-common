@@ -154,6 +154,7 @@ endif
 
 # Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/props/vendor.prop
+TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/configs/props/system_ext.prop
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
