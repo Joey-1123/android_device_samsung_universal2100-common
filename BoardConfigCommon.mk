@@ -66,6 +66,7 @@ BOARD_MKBOOTIMG_ARGS := \
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 SOONG_CONFIG_NAMESPACES += samsungCameraVars
 SOONG_CONFIG_samsungCameraVars += extra_ids
+$(call soong_config_set,samsungCameraVars,needs_sec_reserved_field,true)
 
 # Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 11429478400
