@@ -81,6 +81,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcrypto-tm \
     libshim_crypto:64 \
+    libshim_crypto_cbs.vendor \
     libssl-tm
 
 # Lineage Health
@@ -157,7 +158,9 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     libhwbinder \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    android.hardware.keymaster@4.0-service.samsung \
+    libkeymaster4_1support.vendor:64
 
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := false
