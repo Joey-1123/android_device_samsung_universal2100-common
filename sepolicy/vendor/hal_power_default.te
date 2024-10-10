@@ -1,3 +1,5 @@
+typeattribute hal_power_default mlstrustedsubject;
+
 r_dir_file(hal_power_default, sysfs_battery);
 
 allow hal_power_default {
@@ -39,3 +41,16 @@ allow hal_power_default sysfs_ems_writable:file rw_file_perms;
 allow hal_power_default sysfs_ems_writable:file { open write };
 allow hal_power_default hal_power_default:capability sys_nice;
 allow hal_power_default platform_app:process setsched;
+
+# Set scheduling info for apps (for adpf)
+allow hal_power_default appdomain:process { getsched setsched };
+allow hal_power_default self:capability sys_nice;
+
+# Set scheduling info for surfaceflinger (for adpf)
+allow hal_power_default surfaceflinger:process setsched;
+
+# Set scheduling info for HWC (for adpf)
+allow hal_power_default hal_graphics_composer_default:process setsched;
+
+# Set scheduling info for system_server (for adpf)
+allow hal_power_default system_server:process setsched;
