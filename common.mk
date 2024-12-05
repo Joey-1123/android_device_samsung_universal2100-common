@@ -160,6 +160,9 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# Kernel
+PRODUCT_ENABLE_UFFD_GC := false
+
 # OMX
 PRODUCT_PACKAGES += \
     libstagefrighthw \
