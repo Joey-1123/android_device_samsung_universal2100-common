@@ -236,7 +236,7 @@ vendor/lib64/libvkmanager_vendor.so
 vendor/lib64/libvkservice.so
 
 # Process Authenticator
-vendor/bin/vendor.samsung.hardware.security.proca@2.0-service
+-vendor/bin/vendor.samsung.hardware.security.proca@2.0-service
 vendor/etc/init/pa_daemon_teegris.rc
 
 # Teegris
