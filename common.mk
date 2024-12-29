@@ -269,11 +269,11 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.0.vendor:64 \
     android.hardware.power-service.pixel-libperfmgr
 
+# Cgroup and task_profiles
 PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/cgroups_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
     $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/power/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # PowerShare
 PRODUCT_PACKAGES += \
