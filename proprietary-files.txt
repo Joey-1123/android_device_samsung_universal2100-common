@@ -1,4 +1,4 @@
-# Proprietary files - from Samsung package version G998BXXS9FXBD, unless pinned
+# Proprietary files - from Samsung package version G998BXXSEGXK1, unless pinned
 
 # Bluetooth
 vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
