@@ -33,3 +33,9 @@ allow hal_power_default sysfs_battery_writable:file write;
 
 allow hal_power_default sysfs_touchscreen_writable:file write;
 allow hal_power_default sysfs_touchscreen_writable:file open;
+allow hal_power_default sysfs_power:file write;
+allow hal_power_default sysfs_gpu:file rw_file_perms;
+allow hal_power_default sysfs_ems_writable:file rw_file_perms;
+allow hal_power_default sysfs_ems_writable:file { open write };
+allow hal_power_default hal_power_default:capability sys_nice;
+allow hal_power_default platform_app:process setsched;

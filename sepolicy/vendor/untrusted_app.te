@@ -1,3 +1,21 @@
 # untrusted_app.te
 
 allow untrusted_app user_profile_data_file:dir getattr;
+allow untrusted_app aconfig_storage_metadata_file:dir search;
+allow untrusted_app unlabeled:filesystem getattr;
+allow untrusted_app hal_sbwcdecomp_hwservice:hwservice_manager find;
+allow untrusted_app app_data_file:file execute;
+allow untrusted_app media_rw_data_file:file { relabelto relabelfrom };
+allow untrusted_app sysfs_gpu_writable:file { open read };
+allow untrusted_app sysfs_battery:file { open read getattr };
+allow untrusted_app app_efs_file:dir search;
+allow untrusted_app sysfs_battery:dir search;
+allow untrusted_app sysfs_battery:lnk_file read;
+
+binder_call(untrusted_app, hal_sbwcdecomp_default)
+allow untrusted_app sysfs_soc:file read;
+allow untrusted_app shell_test_data_file:dir search;
+allow untrusted_app rootfs:dir read;
+allow untrusted_app proc:file getattr;
+allow untrusted_app sysfs_android_usb:dir search;
+

@@ -2,3 +2,5 @@
 
 allow priv_app metadata_file:dir { open read };
 allow priv_app metadata_file:dir getattr;
+allow priv_app hal_sbwcdecomp_hwservice:hwservice_manager find;
+binder_call(priv_app, hal_sbwcdecomp_default)

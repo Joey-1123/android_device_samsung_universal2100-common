@@ -141,12 +141,15 @@
 
 # Battery
 /sys/class/power_supply/ac                                                                                    u:object_r:sysfs_battery:s0
+/sys/class/power_supply/bms/charge_full_design                                                                u:object_r:sysfs_battery:s0
 /sys/class/power_supply/battery                                                                               u:object_r:sysfs_battery:s0
+/sys/class/power_supply/battery/current_now                                                                   u:object_r:sysfs_battery:s0
 /sys/class/power_supply/otg                                                                                   u:object_r:sysfs_battery:s0
 /sys/class/power_supply/pogo                                                                                  u:object_r:sysfs_battery:s0
 /sys/class/power_supply/sec-direct-charger                                                                    u:object_r:sysfs_battery:s0
 /sys/class/power_supply/usb                                                                                   u:object_r:sysfs_battery:s0
 /sys/class/power_supply/wireless                                                                              u:object_r:sysfs_battery:s0
+/sys/class/power_supply/battery/wc_tx_en                                                                      u:object_r:sysfs_battery:s0
 /sys/class/power_supply/max77705-otg                                                                          u:object_r:sysfs_battery:s0
 /sys/class/power_supply/battery/batt_slate_mode                                                               u:object_r:sysfs_battery_writable:s0
 /sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-charger/power_supply/max77705-charger/type         u:object_r:sysfs_batteryinfo:s0
@@ -176,11 +179,14 @@
 /sys/devices/virtual/cirrus/cirrus_cal/vsc_r                                                                     u:object_r:vendor_sysfs_cirrus_cal_writable:s0
                                                                       
 # Ems
-/sys/kernel/ems/emstune/req_mode                                                                              u:object_r:sysfs_ems:s0
+/sys/kernel/ems/emstune/req_mode                                                                              u:object_r:sysfs_ems_writable:s0
 
 # Extcon
 /sys/devices/platform/10ab0000.displayport/extcon/extcon0/state                                              u:object_r:sysfs_displayport_writable:s0
 /sys/devices/platform/10ab0000\.displayport/extcon/extcon0/cable\.(0|1)/(name|state)$                        u:object_r:sysfs_displayport_writable:s0
+
+# Exynos-bts
+/sys/firmware/devicetree/base/exynos-bts(/.*)?                                                               u:object_r:sysfs_video:s0
 
 # Gps
 /sys/devices/virtual/sec/gps/GPS_PWR_EN/value                                                                 u:object_r:sysfs_gps_writable:s0
@@ -207,6 +213,8 @@
 /sys/class/power_supply/max77705-fuelgauge                                                                    u:object_r:sysfs_wakeup:s0
 /sys/class/power_supply/mfc-charger                                                                           u:object_r:sysfs_wakeup:s0
 
+# Video
+/dev/video50                                                                                                  u:object_r:video_device:s0
 
 # WBRC
 /dev/wbrc                                                                                                     u:object_r:wbrc_device:s0

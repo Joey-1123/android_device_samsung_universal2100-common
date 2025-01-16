@@ -18,5 +18,6 @@ allow system_app {
 allow system_app sysfs_lcd_writable:file rw_file_perms;
 allow system_app sysfs_lcd_writable:lnk_file rw_file_perms;
 allow system_app sysfs_zram:file getattr;
+allow system_app sysfs_battery:dir search;
 
 dontaudit system_app debugfs_tracing:file r_file_perms;

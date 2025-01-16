@@ -26,3 +26,4 @@ set_prop(rild, radio_prop)
 dontaudit rild system_prop:file read;
 allow rild rild:unix_stream_socket connectto;
 allow rild self:capability { chown };
+allow rild app_efs_file:dir add_name;

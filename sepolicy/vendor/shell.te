@@ -10,3 +10,9 @@ allow shell sysfs_wakeup_reasons:dir { open read };
 allow shell sysfs_wakeup_reasons:file getattr;
 
 allow shell sysfs:file getattr;
+allow shell shell:dir write;
+allow shell efs_file:dir getattr;
+allow shell hwc_vendor_file:file getattr;
+allow shell sysfs_gpu_writable:file getattr;
+allow shell sysfs_kernel_notes:file getattr;
+allow shell vendor_file:file getattr;

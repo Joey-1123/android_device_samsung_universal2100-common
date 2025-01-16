@@ -1,3 +1,4 @@
 # hal_lineage_powershare_default.te
 
-allow hal_lineage_powershare_default sysfs_battery:file { open read };
+allow hal_lineage_powershare_default sysfs_battery:file { open read getattr };
+allow hal_lineage_powershare_default sysfs_battery:lnk_file read;

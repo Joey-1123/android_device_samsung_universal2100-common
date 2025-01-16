@@ -1,3 +1,4 @@
+
 ####################################
 # DebugFS
 #
@@ -28,6 +29,7 @@ genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:bat
 genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/pogo/subsystem u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/wireless/subsystem u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/otg/subsystem u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/current_now u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/10580000.hsi2c/i2c-3/3-003b/power_supply/mfc-charger/subsystem u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/subsystem u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0057/power_supply/pca9468-charger/subsystem u:object_r:sysfs_battery:s0
@@ -79,8 +81,10 @@ genfscon sysfs /kernel/gpu/gpu_max_clock                                        
 genfscon sysfs /kernel/gpu/gpu_memory                                                                                                u:object_r:sysfs_gpu_memory:s0
 genfscon sysfs /kernel/gpu/gpu_mm_min_clock                                                                                          u:object_r:sysfs_gpu:s0
 genfscon sysfs /kernel/gpu/gpu_poweroff_delay                                                                                        u:object_r:sysfs_gpu:s0
+genfscon sysfs /kernel/gpu(/.*)?                                                                                                     u:object_r:sysfs_gpu_writable:s0
 
 # Input
+genfscon sysfs /class/input/event8/device/poll_delay                                                                                 u:object_r:sysfs_input_writable:s0
 genfscon sysfs /devices/virtual/input/input11/enable                                                                                 u:object_r:sysfs_input_writable:s0
 genfscon sysfs /devices/virtual/input/input11/poll_delay                                                                             u:object_r:sysfs_input_writable:s0
 genfscon sysfs /devices/virtual/input/input4/enable2                                                                                 u:object_r:sysfs_input_writable:s0
@@ -106,11 +110,14 @@ genfscon sysfs /devices/platform/npu_exynos/version                             
 genfscon sysfs /devices/platform/exynos-ufcc/ucc/cstate_control                                                                      u:object_r:sysfs_power_writable:s0
 genfscon sysfs /devices/platform/exynos-ufcc/ufc/cpufreq_max_limit                                                                    u:object_r:sysfs_power:s0
 
+# SOC
+genfscon sysfs /devices/soc0(/.*)?                                                                                                   u:object_r:sysfs_soc:s0
+
 # RTC
 genfscon sysfs /devices/platform/15940000.speedy/i2c-16/16-0000/s2mps19-rtc/rtc/rtc0/hctosys                                         u:object_r:sysfs_rtc:s0
 
 # Sensors
-genfscon sysfs /devices/virtual/sensors/grip_sensor/name                                                                             u:object_r:sysfs_sensors:s0 
+genfscon sysfs /devices/virtual/sensors/grip_sensor/name                                                                             u:object_r:sysfs_sensors:s0
 genfscon sysfs /devices/virtual/sensors/magnetic_sensor/vendor                                                                       u:object_r:sysfs_sensors:s0
 genfscon sysfs /devices/virtual/sensors/ssp_sensor/ssp_control                                                                       u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power                                                                              u:object_r:sysfs_sensors_writable:s0
@@ -233,4 +240,3 @@ genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:bat
 genfscon sysfs /devices/platform/npu_exynos/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-14/14-001f/s2mps23-rtc/rtc/rtc0/wakeup55 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /sys/devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/usb/wakeup130 u:object_r:sysfs_wakeup:s0
-

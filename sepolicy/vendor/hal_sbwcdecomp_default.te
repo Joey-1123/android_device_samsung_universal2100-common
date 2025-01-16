@@ -5,3 +5,8 @@ allow hal_sbwcdecomp_default hal_sbwcdecomp_hwservice:hwservice_manager { add  f
 allow hal_sbwcdecomp_default hidl_base_hwservice:hwservice_manager { add };
 allow hal_sbwcdecomp_default hwservicemanager:binder { call  transfer };
 allow hal_sbwcdecomp_default hwservicemanager_prop:file { getattr  map  open  read };
+
+binder_call(hal_sbwcdecomp_default, hal_sbwcdecomp_default)
+allow hal_sbwcdecomp_default hal_graphics_allocator_default:fd use;
+allow hal_sbwcdecomp_default video_device:chr_file { ioctl read write open };
+allow hal_sbwcdecomp_default graphics_device:dir { search write open read };

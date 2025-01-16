@@ -1,0 +1,3 @@
+# untrusted_app_29.te
+
+allow untrusted_app_29 sysfs_android_usb:dir search;

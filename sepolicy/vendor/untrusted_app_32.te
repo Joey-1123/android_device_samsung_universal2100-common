@@ -1,3 +1,6 @@
 # untrusted_app_32.te
 
 allow untrusted_app_32 media_rw_data_file:file { relabelfrom relabelto };
+allow untrusted_app_32 app_data_file:file execute;
+allow untrusted_app_32 hal_sbwcdecomp_hwservice:hwservice_manager find;
+allow untrusted_app_32 unlabeled:filesystem getattr;

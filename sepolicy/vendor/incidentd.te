@@ -1,0 +1,3 @@
+# incidentd.te
+
+allow incidentd sysfs_battery:dir search;

@@ -30,6 +30,7 @@ type proc_dirty_bytes, fs_type, proc_type;
 
 # sysfs types 
 type sysfs_abox, sysfs_type, r_fs_type, fs_type;
+type sysfs_soc, rw_fs_type, sysfs_type, r_fs_type, fs_type;
 type sysfs_abox_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_app_launch_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_blk_file, sysfs_type, r_fs_type, fs_type;
@@ -55,6 +56,7 @@ type sysfs_npu_version, sysfs_type, r_fs_type, fs_type;
 type sysfs_ss_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_ufs_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
+type sysfs_video, sysfs_type, r_fs_type, fs_type;
 type vendor_sysfs_cirrus_cal, sysfs_type, r_fs_type, fs_type;
 type vendor_sysfs_cirrus_cal_writable, sysfs_type, rw_fs_type, fs_type;
 

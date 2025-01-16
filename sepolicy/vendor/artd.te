@@ -1,3 +1,4 @@
 # artd.te
 
 allow artd apk_tmp_file:dir { open read };
+allow artd app_data_file:lnk_file read;

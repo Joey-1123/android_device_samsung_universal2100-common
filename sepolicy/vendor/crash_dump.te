@@ -1,3 +1,4 @@
 # crash_dump.te
 
 allow crash_dump hwc_vendor_file:file { getattr open read };
+allow crash_dump surfaceflinger:unix_stream_socket read;
