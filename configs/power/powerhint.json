@@ -274,6 +274,24 @@
             "Value": "1"
         },
         {
+            "PowerHint": "LAUNCH",
+            "Node": "CPULittleClusterMinFreq",
+            "Duration": 3000,
+            "Value": "2210000"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUMidClusterMinFreq",
+            "Duration": 3000,
+            "Value": "2496000"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUBigClusterMinFreq",
+            "Duration": 3000,
+            "Value": "2704000"
+        },
+        {
             "PowerHint": "CAMERA_LAUNCH",
             "Node": "CPULittleClusterMinFreq",
             "Duration": 1000,
