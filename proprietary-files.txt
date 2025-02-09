@@ -133,6 +133,12 @@ vendor/firmware/secure_configuration.flm.cfg.bin
 vendor/lib/hw/gatekeeper.exynos2100.so
 vendor/lib64/hw/gatekeeper.exynos2100.so
 
+# Graphics
+vendor/etc/init/vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service.rc
+vendor/bin/hw/vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service
+vendor/lib64/vendor.samsung_slsi.hardware.SbwcDecompService@1.0.so
+vendor/lib64/libsbwcwrapper.so
+
 # GPS
 vendor/bin/hw/gps.sh
 vendor/bin/hw/gpsd

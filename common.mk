@@ -120,9 +120,6 @@ PRODUCT_PACKAGES += \
     hwcomposer.exynos2100 \
     libion
 
-PRODUCT_PACKAGES += \
-    vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor:32 \
