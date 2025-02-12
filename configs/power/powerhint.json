@@ -277,19 +277,19 @@
             "PowerHint": "LAUNCH",
             "Node": "CPULittleClusterMinFreq",
             "Duration": 3000,
-            "Value": "2210000"
+            "Value": "1482000"
         },
         {
             "PowerHint": "LAUNCH",
             "Node": "CPUMidClusterMinFreq",
             "Duration": 3000,
-            "Value": "2496000"
+            "Value": "2080000"
         },
         {
             "PowerHint": "LAUNCH",
             "Node": "CPUBigClusterMinFreq",
             "Duration": 3000,
-            "Value": "2704000"
+            "Value": "2392000"
         },
         {
             "PowerHint": "CAMERA_LAUNCH",
@@ -457,7 +457,7 @@
             "PowerHint": "FIXED_PERFORMANCE",
             "Node": "CPULittleClusterMinFreq",
             "Duration": 0,
-            "Value": "2210000"
+            "Value": "1482000"
         },
         {
             "PowerHint": "FIXED_PERFORMANCE",
@@ -469,7 +469,7 @@
             "PowerHint": "FIXED_PERFORMANCE",
             "Node": "CPUMidClusterMinFreq",
             "Duration": 0,
-            "Value": "2496000"
+            "Value": "2080000"
         },
         {
             "PowerHint": "FIXED_PERFORMANCE",
@@ -481,7 +481,7 @@
             "PowerHint": "FIXED_PERFORMANCE",
             "Node": "CPUBigClusterMinFreq",
             "Duration": 0,
-            "Value": "2912000"
+            "Value": "2392000"
         },
         {
             "PowerHint": "FIXED_PERFORMANCE",
@@ -499,7 +499,7 @@
             "PowerHint": "FIXED_PERFORMANCE",
             "Node": "GPUMinFreq",
             "Duration": 0,
-            "Value": "858000"
+            "Value": "585000"
         },
         {
             "PowerHint": "FIXED_PERFORMANCE",
