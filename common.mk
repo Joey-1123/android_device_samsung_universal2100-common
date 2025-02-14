@@ -117,7 +117,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
     hwcomposer.exynos2100 \
-    libion
+    libion \
+    libgiantmscl
 
 # DRM
 PRODUCT_PACKAGES += \
