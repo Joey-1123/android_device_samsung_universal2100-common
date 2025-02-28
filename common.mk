@@ -60,33 +60,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
     $(COMMON_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 
-# init
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos2100 \
-    $(COMMON_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.exynos2100 \
-    $(COMMON_PATH)/configs/init/fstab.universal2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.exynos2100 \
-    $(COMMON_PATH)/configs/init/init.exynos2100.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.rc \
-    $(COMMON_PATH)/configs/init/init.exynos2100.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.usb.rc \
-    $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.samsung.rc \
-    $(COMMON_PATH)/configs/init/init.recovery.exynos2100.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos2100.rc \
-    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    $(COMMON_PATH)/configs/init/init.udfps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.udfps.rc
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0-service.samsung \
-    libkeymaster4_1support.vendor:64
-
-PRODUCT_PACKAGES += \
-    libcrypto-tm \
-    libshim_crypto:64 \
-    libshim_crypto_cbs.vendor \
-    libssl-tm
-
-# Lineage Health
-#PRODUCT_PACKAGES += \
-#    vendor.lineage.health-service.default
-
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl:64 \
@@ -102,6 +75,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libhwjpeg \
     libexpat.vendor
+
+# Cgroup and task_profiles
+PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/cgroups_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
+    $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -159,10 +138,33 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung \
     libkeymaster4_1support.vendor:64
 
+# init
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos2100 \
+    $(COMMON_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.exynos2100 \
+    $(COMMON_PATH)/configs/init/fstab.universal2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.exynos2100 \
+    $(COMMON_PATH)/configs/init/init.exynos2100.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.rc \
+    $(COMMON_PATH)/configs/init/init.exynos2100.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.usb.rc \
+    $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.samsung.rc \
+    $(COMMON_PATH)/configs/init/init.recovery.exynos2100.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos2100.rc \
+    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(COMMON_PATH)/configs/init/init.udfps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.udfps.rc
+
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := false
 
-# OMX
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.0-service.samsung \
+    libkeymaster4_1support.vendor:64
+
+PRODUCT_PACKAGES += \
+    libcrypto-tm \
+    libshim_crypto:64 \
+    libshim_crypto_cbs.vendor \
+    libssl-tm
+
+# Media
 PRODUCT_PACKAGES += \
     libstagefrighthw \
     libExynosOMX_Core \
@@ -181,7 +183,7 @@ PRODUCT_PACKAGES += \
     libOMX.Exynos.VP9.Encoder \
     libOMX.Exynos.WMV.Decoder
 
-# Media
+
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(COMMON_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
@@ -190,23 +192,33 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstagefright_softomx_plugin.vendor
 
+ # Memtrack
+PRODUCT_PACKAGES += \
+    memtrack.exynos2100 \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    libion_exynos
+
+# Neural networks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3.vendor \
+    libtextclassifier_hash.vendor
+
+# NFC
+PRODUCT_PACKAGES += \
+    android.hardware.nfc-service.nxp \
+    android.hardware.secure_element-service.nxp \
+    com.android.nfc_extras \
+    libchrome.vendor \
+    NfcNci \
+    SecureElement \
+    Tag
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     device/samsung/universal2100-common/overlay/hardware/samsung/AdvancedDisplay
-
-# Preopt SystemUI and Settings
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
-    SystemUIGoogle \
-    Settings \
-    SettingsGoogle \
-    NexusLauncherRelease
-
-# Compile SystemUI on device with `speed`.
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.systemuicompilerfilter=speed
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -263,16 +275,22 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/permissions/platform-samsung.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/platform-samsung.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
+# Preopt SystemUI and Settings
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    SystemUI \
+    SystemUIGoogle \
+    Settings \
+    SettingsGoogle \
+    NexusLauncherRelease
+
+# Compile SystemUI on device with `speed`.
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.systemuicompilerfilter=speed
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0.vendor:64 \
     android.hardware.power-service.pixel-libperfmgr
-
-# Cgroup and task_profiles
-PRODUCT_COPY_FILES += \
-    system/core/libprocessgroup/profiles/cgroups_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
-    system/core/libprocessgroup/profiles/task_profiles_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
-    $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # PowerShare
 PRODUCT_PACKAGES += \
@@ -336,29 +354,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/samsung \
     hardware/samsung_slsi/interfaces \
     hardware/samsung_slsi-linaro/exynos/gralloc4
-
-# Memtrack
-PRODUCT_PACKAGES += \
-    memtrack.exynos2100 \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    libion_exynos \
-    libion
-
-# Neural networks
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor \
-    libtextclassifier_hash.vendor
-
-# NFC
-PRODUCT_PACKAGES += \
-    android.hardware.nfc-service.nxp \
-    android.hardware.secure_element-service.nxp \
-    com.android.nfc_extras \
-    libchrome.vendor \
-    NfcNci \
-    SecureElement \
-    Tag
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
