@@ -116,7 +116,7 @@ TARGET_KERNEL_NO_GCC := true
 BOARD_RAMDISK_USE_LZ4 := true
 
 # Keymaster
-TARGET_KEYMASTER_VARIANT := samsung
+$(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/universal2100-common:libskeymaster4device)
 
 ## Manifest
 # HIDL
