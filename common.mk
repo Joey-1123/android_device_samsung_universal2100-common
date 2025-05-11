@@ -76,11 +76,14 @@ PRODUCT_PACKAGES += \
     libhwjpeg \
     libexpat.vendor
 
-# Cgroup and task_profiles
+# Powerhint
 PRODUCT_COPY_FILES += \
-    system/core/libprocessgroup/profiles/cgroups_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
-    system/core/libprocessgroup/profiles/task_profiles_29.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
     $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    
+# Task profiles
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/task_profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    $(COMMON_PATH)/configs/task_profiles/task_profiles_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json    
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -147,6 +150,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.exynos2100.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.usb.rc \
     $(COMMON_PATH)/configs/init/init.samsung.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.samsung.rc \
     $(COMMON_PATH)/configs/init/init.recovery.exynos2100.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos2100.rc \
+    $(COMMON_PATH)/configs/init/init.stune.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.stune.rc \
     $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
     $(COMMON_PATH)/configs/init/init.udfps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.udfps.rc
 
