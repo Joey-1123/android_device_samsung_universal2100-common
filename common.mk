@@ -407,10 +407,9 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(COMMON_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
     
-# Matrixx stuff
+# GMS/features
 WITH_GMS := true
 WITH_GMS_COMMS_SUITE := true
-TARGET_SUPPORTS_WALLEFFECT := true
 TARGET_HAS_UDFPS := true
 TARGET_DISABLE_EPPE := true
 PRODUCT_ENABLE_UFFD_GC := false
